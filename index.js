@@ -7,11 +7,12 @@
 var Word = require('./word.js');
 var inquirer = require("inquirer");
 
+lives = 5;
+
+
 word = ["Bartlet", "President", "Leo"];
 
 start();
-
-//inquirer prompt 
 
 inquirer.prompt([
     {
@@ -37,19 +38,23 @@ function start() {
 //function to chose a random word
 function choseWord() {
     randomWord = word[Math.floor(Math.random() * word.length)]
-    var test = new Word(randomWord);
-    console.log(test);
-    console.log("HERES A WORD!")
+    new Word(randomWord);
 }
+
+function guess(){
+    if(this.Letter.correctGuess < Word.letters.length){
+        //get input from user using prompt 
+        //check if correct 
+    } else {
+        //Win game function
+    }
+}
+guess();
+
+//if the letter is guessed correctly, put it in the word 
+//else subtract from the lives function 
+
+//once there are no lives left end the game, game is over
 
 //function to actually guess the word 
 //if then statement for guessing and points 
-
-//then checkguess
-
-//if else statement for if it was correct or not 
-
-//lose game function 
-
-//win game function 
-
