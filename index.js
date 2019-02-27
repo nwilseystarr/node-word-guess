@@ -22,7 +22,6 @@ inquirer.prompt([
     },
 
 ]).then(function (user) {
-
     //if user says they are ready to play 
     if (user.ready === true) {
         choseWord()
@@ -38,21 +37,15 @@ function start() {
 //function to chose a random word
 function choseWord() {
     randomWord = word[Math.floor(Math.random() * word.length)]
-    new Word(randomWord);
+    var test = new Word(randomWord);
+    console.log(test);
 }
 
-function guess(){
-    if(this.Letter.correctGuess < Word.letters.length){
-        //get input from user using prompt 
-        //check if correct 
-    } else {
-        //Win game function
-    }
-}
-guess();
+//display the toString
 
-//if the letter is guessed correctly, put it in the word 
-//else subtract from the lives function 
+//loop through the Word.letters array and if that's what they guessed === true 
+//call the toString again
+//if it's wrong lives--
 
 //once there are no lives left end the game, game is over
 
